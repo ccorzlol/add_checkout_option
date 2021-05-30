@@ -1,5 +1,4 @@
 // Initialize extra fields
-// test1234
 ec = ec || {};
 ec.order = ec.order || {};
 ec.order.extraFields = ec.order.extraFields || {};
