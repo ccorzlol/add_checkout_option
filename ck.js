@@ -4,14 +4,20 @@ ec = ec || {};
 ec.order = ec.order || {};
 ec.order.extraFields = ec.order.extraFields || {};
 
-// Add a new optional text input 'How should we sign the package?' to shipping address form
-ec.order.extraFields.wrapping_box_signature = {
-    'title': 'How should we sign the package?',
-    'textPlaceholder': 'Package sign',
-    'type': 'text',
-    'tip': 'We will put a label on a box so the recipient knows who it is from',
+// The field "how_did_you_find_us" asks user about how they found the store. Drop down type
+ec.order.extraFields.how_did_you_find_us = {
+    'title': 'How did you find us?',
+    'type': 'select',
     'required': false,
-    'checkoutDisplaySection': 'shipping_address'
+    // 'selectOptions': ['Wechat', 'WhatsApp', 'Other'],
+    'options': [
+        {'title': 'Wechat'},
+      {'title': 'WhatsApp'},
+      {'title': 'Other'}
+    ],
+    'value': 'TV show', // Default value
+    'checkoutDisplaySection': 'payment_details'
 };
+
 
 Ecwid.refreshConfig();
